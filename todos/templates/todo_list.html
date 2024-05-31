@@ -17,7 +17,14 @@
   <h2>Current Todos</h2>
   <ul>
     {% for todo in todos %}
-      <li>{{todo.id}}: {{todo.task}}</li>
+      <li>
+        {{todo.id}}: {{todo.task}}
+        <form action="{% url 'todo_list' %}" method="post" style="display:inline">
+          {% csrf_token %}
+          <input type="hidden" name="todo_id" value="{{ todo.id }}">
+          <button type="submit" name="delete_todo">Delete</button>
+        </form>
+      </li>
     {% endfor %}
   </ul>
 </body>
