@@ -7,6 +7,14 @@
 </head>
 <body>
   <h1>Todolist</h1>
+  <h2>Add a New Todo</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Todo</button>
+  </form>
+
+  <h2>Current Todos</h2>
   <ul>
     {% for todo in todos %}
       <li>{{todo.id}}: {{todo.task}}</li>
