@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todolist</title>
+</head>
+<body>
+  <h1>Todolist</h1>
+  <ul>
+    {% for todo in todos %}
+      <li>{{todo.id}}: {{todo.task}}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
